@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var connectionString = process.env.NODE_ENV === 'mongodb://localhost/final_project'
+var connectionString = 'mongodb://localhost/final_project'
 
 mongoose.connect(connectionString);
 

@@ -1,7 +1,9 @@
 var express = require('express'),
     app     = express(),
     exphbs  = require('express-handlebars'),
-    hbs     = require('hbs')
+    hbs     = require('hbs'),
+    fs      = require('fs'),
+    bodyParser = require('body-parser')
 
 
 app.engine('hbs', exphbs({
@@ -18,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 
 require('./models/db');
 
-app.use('/home', require('./controllers/home'));
+app.use('/', require('./controllers/home'));
 
 //Start server listening on port 3000
 var server = app.listen(process.env.PORT || 3000, function() {
