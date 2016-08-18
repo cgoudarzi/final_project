@@ -94,13 +94,12 @@ create: function () {
 
 
 makeCoin: function(total) {
+      x = Math.random() * (795 - 5) + 5; 
       if (total < 3) {
         for (i = 0; i < 3; i++) {
-          var coin = coins.create(player.x *5, player.y + 5, 'coin');
+          var coin = coins.create(x, 50, 'coin');
           coin.scale.setTo(.7, .7); 
         }
-    } else {
-      // console.log(coins.total)
     }
   },
 
@@ -133,7 +132,7 @@ update: function() {
     //Collect coins
     function collectCoin(player, coin) {
       coin.kill();
-      score += .5;
+      score += 1;
       console.log(coins.total);
       this.checkScore();
 
