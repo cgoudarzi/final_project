@@ -4,13 +4,17 @@
       mongoose = require('mongoose');
       fs       = require('fs')
 
-Home.route('/users')
+Home.route('/scores')
+  .get(function(req, res, next) {
+    res.redirect('/');
+  })
+
   .post(function(req, res, next) {
-    console.log(req.body)
+    console.log(req.body);
     User.create({
+      
       name: req.body.name,
-      score: req.body.score,
-      email: req.body.email 
+      score: req.body.score
     }, function (error, user) {
       if (error) {
         console.log(error)
