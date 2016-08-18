@@ -6,20 +6,24 @@
 
 Home.route('/scores')
   .get(function(req, res, next) {
-    res.redirect('/');
+    User.find({}, function(err, users) {
+      var scores = users;
+      res.send(scores);
+    });
   })
 
   .post(function(req, res, next) {
-    console.log(req.body);
+    console.log(req.body.username);
+    console.log(req.body.score)
     User.create({
       
-      name: req.body.name,
+      name: req.body.username,
       score: req.body.score
-    }, function (error, user) {
+    }, 
+    function (error, user) {
       if (error) {
         console.log(error)
       } else {
-        console.log('--------user object-----------')
         console.log(user)
         res.redirect('/')
       }

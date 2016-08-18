@@ -87,28 +87,37 @@ create: function () {
 
     coins.enableBody = true;
     
-    
+    this.checkPlaying(music.isPlaying);
     
 
   },
 
 
-makeCoin: function(isPlaying) {
-    if (isPlaying = true) {
-        var coin = coins.create(105, Math.random(), 'coin');
-        coin.scale.setTo(.7, .7);
-        // coin.body.bounce.y = 0.9 + Math.random() * 0.2;
-      } else {
-        console.log(isPlaying)
-    }  
-},
+makeCoin: function(total) {
+      if (total < 3) {
+        for (i = 0; i < 3; i++) {
+          var coin = coins.create(player.x *5, player.y + 5, 'coin');
+          coin.scale.setTo(.7, .7); 
+        }
+    } else {
+      // console.log(coins.total)
+    }
+  },
 
 checkPlaying: function(currentTime) {
   if (currentTime < 138000) {
-    console.log(currentTime)
+    this.makeCoin(coins.total);
+    
   } else {
     this.win()
   }
+},
+
+checkScore: function() {
+  scoreboard = document.getElementById('scoreboard');
+  liveScore = document.getElementById('scoreboard_2');
+  scoreboard.value = score;
+  liveScore.innerHTML = 'Score: ' + score;
 },
 
 update: function() {
@@ -118,23 +127,22 @@ update: function() {
 
     
     chicago.tilePosition.x -= 1;
-    this.makeCoin(music.isPlaying);
     
-    //12 even coins
 
     
     //Collect coins
     function collectCoin(player, coin) {
       coin.kill();
-      score += 1;
-      scoreText.text = 'Score: ' + score;
-      console.log(score)
+      score += .5;
+      console.log(coins.total);
+      this.checkScore();
+
 
 
     }
 
     this.checkPlaying(music.currentTime);
-    console.log(music.currentTime)
+    // console.log(music.currentTime)
 
     game.physics.arcade.overlap(player, coins, collectCoin, null, this);
     cursors = game.input.keyboard.createCursorKeys();
