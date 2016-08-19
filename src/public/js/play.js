@@ -137,7 +137,7 @@ update: function() {
     //Collect coins
     function collectCoin(player, coin) {
       coin.kill();
-      score += 1;
+      score += 10;
       console.log(coins.total);
       this.checkScore();
 
@@ -148,7 +148,7 @@ update: function() {
     //Collect tapes
     function collectTape(player, tape) {
       tape.kill();
-      score += 2;
+      score += 20;
       this.checkScore();
 
     }
@@ -157,8 +157,9 @@ update: function() {
     this.checkPlaying(music.currentTime);
     // console.log(music.currentTime)
 
+    // game.physics.arcade.overlap(player, tape, collectTape, null, this);
     game.physics.arcade.overlap(player, coins, collectCoin, null, this);
-    game.physics.arcade.overlap(player, tapes, collectTape, null, this);
+    
     cursors = game.input.keyboard.createCursorKeys();
     //Reset the player movement velocity
     player.body.velocity.x = 0;

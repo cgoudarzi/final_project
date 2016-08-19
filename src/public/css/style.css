@@ -4,22 +4,22 @@ body {
 h1 {
   color: #F49F0A;
   font-family: 'Bungee Shade', cursive;
-  margin-left: 13.5%;
+  margin-left: 12%;
   font-size: 55px;
 }
 h5 {
   color: #241F1C;
-  margin-left: 45%;
+  margin-left: 42.5%;
 }
 .input {
-  margin-left: 41.5%;
+  margin-left: 38%;
   margin-top: 2%;
 }
 .canvas {
-  margin-left: 12%;
+  margin-left: 11%;
 }
 .button {
-  margin-left: 43%;
+  margin-left: 40%;
 }
 .container {
   padding: 0 20px;

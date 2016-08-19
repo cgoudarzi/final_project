@@ -3,7 +3,7 @@ var scoreboard = document.getElementById('scoreboard');
 var winState = {
   create: function () {
 
-    var startLabel = game.add.text(25, game.world.height-60, 'Party on! your score was ' + score + ' press the \'spacebar\' key to start', {font: '14px Arial', fill: '#F7F052'});
+    var startLabel = game.add.text(25, game.world.height-60, 'Party on! your score was ' + score + ' press the \'spacebar\' key to start', {font: '14px Orbitron', fill: '#F7F052'});
 
     var spacekey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
