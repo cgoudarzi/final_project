@@ -3,21 +3,23 @@ body {
 }
 h1 {
   color: #F49F0A;
-  margin-left: 37.5%;
+  font-family: 'Bungee Shade', cursive;
+  margin-left: 13.5%;
+  font-size: 55px;
 }
 h5 {
   color: #241F1C;
-  margin-left: 25%;
+  margin-left: 45%;
 }
 .input {
-  margin-left: 45%;
+  margin-left: 41.5%;
   margin-top: 2%;
 }
 .canvas {
-  margin-left: 15%;
+  margin-left: 12%;
 }
 .button {
-  margin-left: 46.25%;
+  margin-left: 43%;
 }
 .container {
   padding: 0 20px;

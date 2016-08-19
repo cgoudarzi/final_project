@@ -7,7 +7,8 @@ game.state.add('boot', bootState);
 game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('play', playState);
+game.state.add('pause', pauseState);
 game.state.add('win', winState);
 
-//After all of the states are adde, start game by calling boot state
+//After all of the states are added, start game by calling boot state
 game.state.start('boot');
