@@ -22,7 +22,7 @@ create: function () {
   
   //------------SETTING THE LEVEL AND PLATFORMS-------------------->
   //Background
-  chicago = game.add.tileSprite(0, 0, 800, 400, 'chicago'),
+  chicago = game.add.tileSprite(0, 0, 800, 400, 'beamWaves'),
 
   //Platforms group contains platforms we can jump on
   platforms = game.add.group();
@@ -43,7 +43,7 @@ create: function () {
 
   
 
-  // create two platforms
+  // create platforms
   var ledge = platforms.create(20, 170, 'ledge');
     ledge.scale.setTo(.2, .2);
 
@@ -82,10 +82,13 @@ create: function () {
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
 
-    //Add Coins
+    //Add Coins & Tapes
     coins = game.add.group();
-
     coins.enableBody = true;
+    tapes = game.add.group();
+    coins.enableBody = true;
+
+
     
     this.checkPlaying(music.isPlaying);
     
@@ -94,11 +97,12 @@ create: function () {
 
 
 makeCoin: function(total) {
-      x = Math.random() * (795 - 5) + 5; 
+      x = Math.random() * (750 - 5) + 5; 
       if (total < 3) {
         for (i = 0; i < 3; i++) {
           var coin = coins.create(x, 50, 'coin');
           coin.scale.setTo(.7, .7); 
+          (i%2 == 0) ? tape = tapes.create(50, 50, 'tape') : console.log(i);
         }
     }
   },
@@ -124,6 +128,7 @@ update: function() {
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(coins, platforms);
 
+
     
     chicago.tilePosition.x -= 1;
     
@@ -140,10 +145,20 @@ update: function() {
 
     }
 
+    //Collect tapes
+    function collectTape(player, tape) {
+      tape.kill();
+      score += 2;
+      this.checkScore();
+
+    }
+
+
     this.checkPlaying(music.currentTime);
     // console.log(music.currentTime)
 
     game.physics.arcade.overlap(player, coins, collectCoin, null, this);
+    game.physics.arcade.overlap(player, tapes, collectTape, null, this);
     cursors = game.input.keyboard.createCursorKeys();
     //Reset the player movement velocity
     player.body.velocity.x = 0;
