@@ -34,6 +34,7 @@
     "express-handlebars": "^3.0.0",
     "fs": "0.0.2",
     "hbs": "^4.0.0",
-    "mongoose": "^4.5.8"
+    "mongoose": "^4.5.8",
+    "superagent": "^2.2.0"
   }
 }

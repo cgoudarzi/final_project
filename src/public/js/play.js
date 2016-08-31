@@ -181,9 +181,9 @@ update: function() {
       player.body.velocity.y = -350;
     }
 
-    var pkey = game.input.keyboard.addKey(Phaser.Keyboard.P);
+    var spacekey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-    pkey.onDown.addOnce(this.pause , this);
+    spacekey.onDown.addOnce(this.pause , this);
 
 
   },

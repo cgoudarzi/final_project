@@ -4,11 +4,12 @@
       mongoose = require('mongoose');
       fs       = require('fs')
 
+
 Home.route('/scores')
   .get(function(req, res, next) {
     User.find({}, function(err, users) {
       var scores = users;
-      res.send(scores);
+      res.send(scores)
     });
   })
 
