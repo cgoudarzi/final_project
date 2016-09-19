@@ -3,7 +3,7 @@ var express = require('express'),
     exphbs  = require('express-handlebars'),
     hbs     = require('hbs'),
     fs      = require('fs'),
-    bodyParser = require('body-parser')
+    bp      = require('body-parser')
 
 
 app.engine('hbs', exphbs({
@@ -13,8 +13,8 @@ app.engine('hbs', exphbs({
   extname:        '.hbs'
 }));
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bp.json())
+app.use(bp.urlencoded({extended: true}))
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');

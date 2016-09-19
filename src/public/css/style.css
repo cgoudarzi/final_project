@@ -4,10 +4,15 @@ body {
 h1 {
   color: #F49F0A;
   font-family: 'Bungee Shade', cursive;
-  margin-left: 12%;
+  margin-left: 12.5%;
   font-size: 55px;
 }
+h3,
 h5 {
+  color: #F49F0A;
+  margin-left: 42.5%;
+}
+h4 {
   color: #F49F0A;
   margin-left: 42.5%;
 }
@@ -20,6 +25,21 @@ h5 {
 }
 .button {
   margin-left: 40%;
+}
+.scoreboard {
+  list-style: none;
+  color: #F7F052;
+  margin-left: 22%;
+}
+.score-div {
+  margin-top: 2%;
+}
+.score-submit {
+  margin-left: -98%;
+  margin-top: 12%;
+}
+.form {
+  margin-left: 10%;
 }
 .container {
   padding: 0 20px;

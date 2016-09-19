@@ -1,8 +1,9 @@
-  var express  = require('express'),
-      Home     = express.Router(),
-      User     = require('../models/user');
-      mongoose = require('mongoose');
-      fs       = require('fs')
+    var express  = require('express'),
+        Home     = express.Router(),
+        User     = require('../models/user');
+        mongoose = require('mongoose');
+        fs       = require('fs')
+
 
 
 Home.route('/scores')
@@ -35,7 +36,10 @@ Home.route('/scores')
 
 Home.route('/')
   .get(function(req, res, next) {
-    res.render('home')
+      User.find({}, function(err, users) {
+      var scores = JSON.parse(users);
+      res.render('home', {gamerscore: scores})
+    });
   });
 
 module.exports = Home;

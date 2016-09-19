@@ -4,17 +4,31 @@
       <h1>Peasantry: the Game</h1>
     </div>
   </div>
+</header>
+<div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
         <div class="canvas" id="canvas_div">
         </div>
     </div>
+  </div>  
+  <div class="row">
+    <div class="col-8 score-div">
+      <h3>High Scores</h3>
+        <ul class="scoreboard">
+          {{#each gamerscore}}
+          <li class="gamerscore">{{this}}</li>
+          {{/each}}
+        </ul>
+    </div>
     <div class="col-4">
-      <div class="scoreSubmit">
-          {{>scoreSubmit}}
-        </div>
+      <div class="score-submit">
+        {{>scoreSubmit}}
+      </div>
     </div>
   </div>
-</header>
+</div>
+  
+
 
 
