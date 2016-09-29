@@ -1,8 +1,9 @@
-    var express  = require('express'),
-        Home     = express.Router(),
+    var express  = require('express');
+        Home     = express.Router();
         User     = require('../models/user');
         mongoose = require('mongoose');
-        fs       = require('fs')
+        fs       = require('fs');
+        bodyParser = require('body-parser')
 
 
 
@@ -37,7 +38,12 @@ Home.route('/scores')
 Home.route('/')
   .get(function(req, res, next) {
       User.find({}, function(err, users) {
-      var scores = JSON.parse(users);
+      scores = users;
+      function list (entry) {
+        li = entry.name + ' ' + entry.score;
+        console.log(li);
+      };
+      scores.forEach(list);
       res.render('home', {gamerscore: scores})
     });
   });
