@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var connectionString = 'mongodb://<admin>:<peasantryproject69>@ds041394.mlab.com:41394/wdi-final_project'
+var connectionString = process.env.DB_HOST;
 
 mongoose.connect(connectionString);
 
