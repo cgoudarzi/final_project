@@ -39,12 +39,16 @@ Home.route('/')
   .get(function(req, res, next) {
       User.find({}, function(err, users) {
       scores = users;
+      array = [];
       function list (entry) {
         li = entry.name + ' ' + entry.score;
         console.log(li);
+        array.push(li);
+        console.log(this.array);
       };
       scores.forEach(list);
-      res.render('home', {gamerscore: scores})
+      // console.log(array);
+      res.render('home', {gamerscore: array})
     });
   });
 
