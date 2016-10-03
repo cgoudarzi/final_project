@@ -102,7 +102,7 @@ makeCoin: function(total) {
         for (i = 0; i < 3; i++) {
           var coin = coins.create(x, 50, 'coin');
           coin.scale.setTo(.7, .7); 
-          (i%2 == 0) ? tape = tapes.create(50, 50, 'tape') : console.log(i);
+          // (i%2 == 0) ? tape = tapes.create(50, 50, 'tape') : console.log(i);
         }
     }
   },
@@ -146,12 +146,12 @@ update: function() {
     }
 
     //Collect tapes
-    function collectTape(player, tape) {
-      tape.kill();
-      score += 20;
-      this.checkScore();
+    // function collectTape(player, tape) {
+    //   tape.kill();
+    //   score += 20;
+    //   this.checkScore();
 
-    }
+    // }
 
 
     this.checkPlaying(music.currentTime);
