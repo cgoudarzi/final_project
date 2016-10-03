@@ -1,4 +1,4 @@
-require('dotenv').config({ silent: true });
+require('dotenv').config({path: '../../.env' });
 
 var express    = require('express'),
     app        = express(),
