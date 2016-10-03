@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var connectionString = process.env.DB_HOST
+var connectionString = process.env.DB_HOST;
 mongoose.connect(connectionString);
 
 mongoose.connection.on('connected', function() {
