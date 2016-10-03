@@ -47,7 +47,6 @@ Home.route('/')
         console.log(this.array);
       };
       scores.forEach(list);
-      // console.log(array);
       res.render('home', {gamerscore: array})
     });
   });
